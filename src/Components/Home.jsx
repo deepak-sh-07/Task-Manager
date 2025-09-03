@@ -14,6 +14,7 @@ const Home = () => {
   const [titleEdit, setTitleEdit] = useState("");
   const [descEdit, setDescEdit] = useState("");
   const [statusEdit, setStatusEdit] = useState("Pending");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const token = localStorage.getItem("token");
   const username = localStorage.getItem("username");
@@ -134,6 +135,11 @@ const Home = () => {
     navigate("/");
   };
 
+  const filteredTasks = tasks.filter(task =>
+    task.title.includes(searchQuery) ||
+    (task.desc && task.desc.includes(searchQuery))
+  );
+
   return (
     <div className="container">
       <ToastContainer position="top-right" autoClose={2000} hideProgressBar />
@@ -156,12 +162,17 @@ const Home = () => {
         <div className="tasks">My Tasks</div>
         <div className="search">
           <img src={search} alt="" />
-          <input type="text" placeholder='Search my tasks' />
+          <input
+            type="text"
+            placeholder='Search my tasks'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
 
         <div className="infotasks">
-          {tasks.length > 0 ? (
-            tasks.map((task) => {
+          {filteredTasks.length > 0 ? (
+            filteredTasks.map((task) => {
               const preview = task.desc?.length > 14 ? task.desc.slice(0, 14) + "..." : task.desc || "";
               return (
                 <div
