@@ -1,0 +1,101 @@
+/* Body container */
+.container {
+  height: 97vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(235, 233, 233);
+  font-family: 'Roboto', sans-serif;
+  padding-top: 9px;
+}
+
+.sub {
+  width: 600px;
+  padding: 10px 20px 0px 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.des {
+  color: rgb(57, 57, 57);
+  margin-bottom: 10px;
+}
+
+/* Form container */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Task title input */
+.tasktitle input,
+.taskdesc input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.tasktitle input:focus,
+.taskdesc input:focus {
+  border-color: rgb(13, 156, 223);
+  box-shadow: 0 0 5px rgba(13, 156, 223, 0.3);
+}
+
+/* Status dropdown */
+.status select {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  height: 35px;
+  width: 90px;
+  border-radius: 6px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  opacity: 0.85;
+}
+
+.buttons .add {
+  background-color: rgb(13, 156, 223);
+  color: white;
+  border: none;
+}
+
+.buttons button.cancel {
+  background-color: white;
+  color: black;
+}
